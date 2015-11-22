@@ -20,6 +20,9 @@ export class MarsPhotosService {
 
       var photos = result.data.photos;
       return photos;
+    }).catch((result) => {
+      // The api returns a 400 when there are no photos.  Just return an empty array in this case.  This ignores legit errors, but that's out of scope.
+      return [];
     });
   }
 }

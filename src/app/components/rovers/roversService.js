@@ -11,6 +11,7 @@ export class RoversService {
         minDate: "2012-08-06",
         maxDate: "2015-10-13",
         maxSol: 1132,
+        img: "assets/images/curiosity-rover.jpg",
         cameras: [
           { name: "FHAZ", full_name: "Front Hazard Avoidance Camera"},
           { name: "NAVCAM", full_name: "Navigation Camera"},
@@ -26,6 +27,7 @@ export class RoversService {
         minDate: "2004-01-25",
         maxDate: "2015-10-14",
         maxSol: 4166,
+        img: "assets/images/opportunity-rover.jpg",
         cameras: [
           { name:"FHAZ","full_name":"Front Hazard Avoidance Camera"},
           { name:"NAVCAM","full_name":"Navigation Camera"},
@@ -40,6 +42,7 @@ export class RoversService {
         minDate: "2004-01-04",
         maxDate: "2010-03-21",
         maxsol: 2208,
+        img: "assets/images/spirit-rover.png",
         cameras: [
           { name:"FHAZ","full_name":"Front Hazard Avoidance Camera"},
           { name:"NAVCAM","full_name":"Navigation Camera"},

@@ -33,6 +33,11 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
     			return rover;
     		}
     	}
+    })
+    .state('about', {
+    	url: '/about',
+    	parent: 'layout',
+    	templateUrl: 'app/about/about.html'
     });
 
   $urlRouterProvider.otherwise('/');

@@ -2,31 +2,50 @@
 
   <h3>{{ roverPhotosCtrl.rover.name }}</h3>
 
-  <label>Show photos from:</label>
-  <span class="text-danger" ng-show="roverPhotosCtrl.invalidDate">Invalid Date</span>
-  <p class="input-group">
-    <input type="text" class="form-control" datepicker-popup ng-model="roverPhotosCtrl.date" show-button-bar="false" show-weeks="false"
-           is-open="roverPhotosCtrl.datePopupOpen" min-date="roverPhotosCtrl.rover.minDate" max-date="roverPhotosCtrl.rover.maxDate" close-text="Close" />
-    <span class="input-group-btn">
-      <button type="button" class="btn btn-default" ng-click="roverPhotosCtrl.openDatePopup($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-    </span>
-  </p>
-
-  <div>
-    <a href="" ng-click="roverPhotosCtrl.prev()">Prev</a>
-    <span>{{ roverPhotosCtrl.selectedPhotoIndex + 1 }} of {{ roverPhotosCtrl.photos.length }}
-    <a href="" ng-click="roverPhotosCtrl.next()">Next</a>
+  <div class="row">
+    <div class="col-xs-4">
+      <label>Show photos from:</label>
+      <span class="text-danger" ng-show="roverPhotosCtrl.invalidDate">Invalid Date</span>
+      <p class="input-group">
+        <input type="text" class="form-control" datepicker-popup ng-model="roverPhotosCtrl.date" show-button-bar="false" show-weeks="false"
+               is-open="roverPhotosCtrl.datePopupOpen" min-date="roverPhotosCtrl.minDate" max-date="roverPhotosCtrl.maxDate" close-text="Close"
+               ng-focus="roverPhotosCtrl.openDatePopup()" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="roverPhotosCtrl.openDatePopup($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+        <button class="random-date btn btn-primary pull-right" ng-click="roverPhotosCtrl.randomDate()">Random!</button>
+      </p>
+    </div>
   </div>
 
   <carousel ng-if="roverPhotosCtrl.hasPhotos">
     <slide ng-repeat="photo in roverPhotosCtrl.photos" active="photo.active">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="photos-prev" ng-click="roverPhotosCtrl.prev()" ng-class="{ disabled: $index === 0 }">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="photo-header clearfix">
+            <h4>{{$index + 1}} of {{ roverPhotosCtrl.photos.length }}</h4>
+            <i class="glyphicon glyphicon-camera"></i><span class="camera-name">{{photo.camera.full_name}}</span>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="photos-next" ng-click="roverPhotosCtrl.next()" ng-class="{ disabled: $last }">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+          </div>
+        </div>
+      </div>
       <div style="text-align: center">
         <img ng-src="{{ photo.img_src }}" align="center" />
       </div>
     </slide>
   </carousel>
 
-  <img ng-src1="{{ roverPhotosCtrl.selectedPhoto.img_src }}"</img>
-
+  <div class="no-photos" ng-show="roverPhotosCtrl.noPhotosForDate">
+    <h3>Sorry, no photos for this date :(</div>
+  </div>
 
 </div>

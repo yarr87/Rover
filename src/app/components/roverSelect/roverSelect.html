@@ -1,5 +1,7 @@
 <div class="rover-select clearfix" ng-click="roverSelectCtrl.click()">
-	<div class="portrait"></div>
+	<div class="portrait">
+		<img ng-src="{{ roverSelectCtrl.rover.img }}" />
+	</div>
 	<div class="details">
 		<h3>{{ roverSelectCtrl.rover.name }}</h3>
 		Landed: {{ roverSelectCtrl.rover.minDate }} <br />
