@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h3>{{ roverPhotosCtrl.rover.name }}</h3>
+
+  <label>Show photos from:</label>
+  <span class="text-danger" ng-show="roverPhotosCtrl.invalidDate">Invalid Date</span>
+  <p class="input-group">
+    <input type="text" class="form-control" datepicker-popup ng-model="roverPhotosCtrl.date" show-button-bar="false" show-weeks="false"
+           is-open="roverPhotosCtrl.datePopupOpen" min-date="roverPhotosCtrl.rover.minDate" max-date="roverPhotosCtrl.rover.maxDate" close-text="Close" />
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-default" ng-click="roverPhotosCtrl.openDatePopup($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+    </span>
+  </p>
+
+  <div>
+    <a href="" ng-click="roverPhotosCtrl.prev()">Prev</a>
+    <span>{{ roverPhotosCtrl.selectedPhotoIndex + 1 }} of {{ roverPhotosCtrl.photos.length }}
+    <a href="" ng-click="roverPhotosCtrl.next()">Next</a>
+  </div>
+
+  <carousel ng-if="roverPhotosCtrl.hasPhotos">
+    <slide ng-repeat="photo in roverPhotosCtrl.photos" active="photo.active">
+      <div style="text-align: center">
+        <img ng-src="{{ photo.img_src }}" align="center" />
+      </div>
+    </slide>
+  </carousel>
+
+  <img ng-src1="{{ roverPhotosCtrl.selectedPhoto.img_src }}"</img>
+
+
+</div>

@@ -1,0 +1,22 @@
+.rover-select {
+
+	cursor: pointer;
+	padding: 30px;
+
+	.portrait {
+		width: 300px;
+		height: 200px;
+		border: solid 1px black;
+		float: left;
+		margin-right: 20px;
+	}
+
+	.details {
+
+	}
+
+	&:hover {
+		background-color: #ccc;
+	}
+
+}
