@@ -1,5 +1,5 @@
 export class RoverPhotosController {
-  constructor ($scope, $stateParams, MarsPhotosService, rover) {
+  constructor ($rootScope, $scope, $stateParams, MarsPhotosService, rover) {
     'ngInject';
 
     this.rover = rover;
@@ -56,7 +56,7 @@ export class RoverPhotosController {
         this.selectPhoto(0);
         this.hasPhotos = true;
       }
-      
+
     });
 
   }

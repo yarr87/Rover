@@ -1,13 +1,13 @@
 .rover-select {
 
 	cursor: pointer;
-	padding: 30px;
+	padding: 10px;
+	margin-top: 20px;
 
 	.portrait {
-		width: 300px;
-		height: 200px;
-		float: left;
-		margin-right: 20px;
+		width: 250px;
+		height: 150px;
+		margin: 0px auto;
 
 		img {
 			width: 100%;
@@ -17,10 +17,22 @@
 
 	.details {
 
+		margin: 0px 50px;
+		text-align: center;
+
+		h3 {
+			font-weight: bold;
+		}
+
+		.dates {
+			text-align: left;
+		}
 	}
 
 	&:hover {
-		background-color: $mars-red;
+		-webkit-box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.75);
 	}
 
 }

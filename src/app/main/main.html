@@ -1,6 +1,8 @@
 <h3>Welcome to the Mars Rover Photo Viewer</h3>
 <h4>Select a rover to view photos of another planet!<h4>
 
-<div ng-repeat="rover in main.rovers">
-  <rover-select rover="rover" on-click="main.onRoverClick(rover)" />
+<div class="row">
+  <div class="col-sm-4" ng-repeat="rover in main.rovers">
+    <rover-select rover="rover" on-click="main.onRoverClick(rover)" />
+  </div>
 </div>

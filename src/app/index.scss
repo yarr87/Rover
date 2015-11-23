@@ -20,8 +20,16 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // endbower
 
 body {
-	background-color: $mars-dirt;
+	background: url(../assets/images/mars-landscape.jpg) #E4C1A3 0 -88% no-repeat;
 	color: $mars-dark;
+
+	@media (max-width: $screen-sm-min) {
+	    background-image: none;
+	  }
+}
+
+.container {
+	//background-color: $mars-dirt;
 }
 
 .browsehappy {
