@@ -35,4 +35,33 @@
 		box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.75);
 	}
 
+	&.selectable {
+		//background-color: $mars-red;
+		margin-top: 0px;
+		border-radius: 5px;
+
+		h3 {
+			font-size: 40px;
+			margin-top: 5px;
+		}
+
+		.portrait {
+			float: left;
+			margin-right: 10px;
+			width: 150px;
+			height: 100px;
+		}
+
+		.details {
+			text-align: left;
+		}
+
+		&:hover {
+			cursor: default;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+	}
+
 }

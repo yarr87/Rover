@@ -3,6 +3,10 @@ body.roverPhotos {
 	color: $mars-dark;
 }
 
+.photo-date {
+	margin-top: 25px;
+}
+
 .carousel-indicators {
 	display: none;
 }
@@ -22,19 +26,9 @@ body.roverPhotos {
 .photos-prev, .photos-next {
 	margin-top: 10px;
 	cursor: pointer;
-	height: 30px;
-	border: solid 1px $mars-red;
-	border-radius: 5px;
-	background-color: $mars-red;
 
 	i {
 		margin-top: 4px;
-		vertical-align: middle;
-	}
-
-	&:hover {
-		background-color: $mars-red;
-		color: #fff;
 	}
 
 	&.disabled {
@@ -46,6 +40,16 @@ body.roverPhotos {
 	margin-left: 15px;
 }
 
+.photo {
+	text-align: center;
+	margin-top: 10px;
+}
+
 .no-photos {
 	text-align: center;
+}
+
+hr {
+	border-color: $mars-dark;
+	margin-top: 5px;
 }

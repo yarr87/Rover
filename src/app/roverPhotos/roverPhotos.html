@@ -1,10 +1,11 @@
-<div class="container">
-
-  <h3>{{ roverPhotosCtrl.rover.name }}</h3>
+<div>
 
   <div class="row">
-    <div class="col-xs-4">
-      <label>Show photos from:</label>
+    <div class="col-xs-8">
+      <rover-select rover="roverPhotosCtrl.rover" selectable="true"></rover-select>
+    </div>
+    <div class="col-xs-4 photo-date">
+      <label>Photo date:</label>
       <span class="text-danger" ng-show="roverPhotosCtrl.invalidDate">Invalid Date</span>
       <p class="input-group">
         <input type="text" class="form-control" datepicker-popup ng-model="roverPhotosCtrl.date" show-button-bar="false" show-weeks="false"
@@ -18,13 +19,15 @@
     </div>
   </div>
 
+  <hr />
+
   <carousel ng-if="roverPhotosCtrl.hasPhotos">
     <slide ng-repeat="photo in roverPhotosCtrl.photos" active="photo.active">
       <div class="row">
         <div class="col-xs-3">
-          <div class="photos-prev" ng-click="roverPhotosCtrl.prev()" ng-class="{ disabled: $index === 0 }">
+          <button class="btn btn-primary btn-lg photos-prev" ng-click="roverPhotosCtrl.prev()" ng-class="{ disabled: $index === 0 }">
             <i class="glyphicon glyphicon-chevron-left"></i>
-          </div>
+          </button>
         </div>
         <div class="col-xs-6">
           <div class="photo-header clearfix">
@@ -33,12 +36,12 @@
           </div>
         </div>
         <div class="col-xs-3">
-          <div class="photos-next" ng-click="roverPhotosCtrl.next()" ng-class="{ disabled: $last }">
+          <button class="btn btn-primary btn-lg photos-next" ng-click="roverPhotosCtrl.next()" ng-class="{ disabled: $last }">
             <i class="glyphicon glyphicon-chevron-right"></i>
-          </div>
+          </button>
         </div>
       </div>
-      <div style="text-align: center">
+      <div class="photo">
         <img ng-src="{{ photo.img_src }}" align="center" />
       </div>
     </slide>

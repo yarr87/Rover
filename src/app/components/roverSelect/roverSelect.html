@@ -1,4 +1,4 @@
-<div class="rover-select clearfix" ng-click="roverSelectCtrl.click()">
+<div class="rover-select clearfix" ng-class="{ selectable: roverSelectCtrl.selectable }" ng-click="roverSelectCtrl.click()">
 	<div class="portrait">
 		<img ng-src="{{ roverSelectCtrl.rover.img }}" />
 	</div>

@@ -1,4 +1,4 @@
-/* global _: false, malarkey:false, moment:false */
+/* global _: false, moment:false */
 
 import { config } from './index.config';
 import { routerConfig } from './index.route';
@@ -11,7 +11,6 @@ import { MarsPhotosService } from '../app/components/marsPhotos/marsPhotosServic
 
 angular.module('rover', ['ngAnimate', 'restangular', 'ui.router', 'ui.bootstrap', 'toastr'])
   .constant('_', _)
-  .constant('malarkey', malarkey)
   .constant('moment', moment)
   .config(config)
   .config(routerConfig)

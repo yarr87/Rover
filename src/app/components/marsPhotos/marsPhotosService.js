@@ -3,10 +3,10 @@ export class MarsPhotosService {
     'ngInject';
 
     this.$http = $http;
+
+    // Free api key from nasa.gov.  Good for 1000 requests/hour
+    this.apiKey = "FAsAyfKoLwXo3XBxCC6Awxb0RhLkioBLSuG2wpQX";
   };
-
-
-
 
   getPhotos(rover, date) {  
 
@@ -14,7 +14,7 @@ export class MarsPhotosService {
       date = rover.minDate;
     }
 
-    var url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?earth_date=${date}&api_key=FAsAyfKoLwXo3XBxCC6Awxb0RhLkioBLSuG2wpQX`;
+    var url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.name}/photos?earth_date=${date}&api_key=${this.apiKey}`;
 
     return this.$http.get(url).then((result) => {
 

@@ -6,7 +6,8 @@ export function RoverSelectDirective() {
     templateUrl: 'app/components/roverSelect/roverSelect.html',
     scope: {
         rover: '=',
-        onClick: '&'
+        onClick: '&',
+        selectable: '='
     },
     controller: RoverSelectController,
     controllerAs: 'roverSelectCtrl',
@@ -19,9 +20,6 @@ export function RoverSelectDirective() {
 class RoverSelectController {
   constructor () {
     'ngInject';
-
-    // "this.creation" is avaible by directive option "bindToController: true"
-    //this.relativeDate = moment(this.creationDate).fromNow();
   }
 
   click() {
