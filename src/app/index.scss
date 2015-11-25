@@ -20,17 +20,19 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // endbower
 
 body {
-	background: url(../assets/images/mars-landscape.jpg) #E4C1A3 0 -100% no-repeat;
+	background: url(../assets/images/mars-landscape.jpg) #E4C1A3 no-repeat;
+	background-position: 0px 340px;
 	color: $mars-dark;
 	padding-bottom: 20px;
 
 	@media (max-width: $screen-sm-min) {
 	    background-image: none;
-	  }
-}
+  	}	
 
-.container {
-	//background-color: $mars-dirt;
+  	&.roverPhotos, &.favorites {
+		background-image: none;
+		color: $mars-dark;
+	}
 }
 
 .browsehappy {
@@ -54,6 +56,14 @@ body {
 	a {
 		color: #296598;
 	}
+}
+
+.mars-image {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	border-radius: 20px;
+	background-color: $mars-red;
 }
 
 /**

@@ -1,0 +1,12 @@
+<div ng-show="favoritesCtrl.photos.length === 0">
+	<h3>You have no favorites.</h3>
+	<h4>If you find a photo you like, click the Favorite button and it will be saved here</h4>
+</div>
+
+<div ng-show="favoritesCtrl.photos.length > 0">
+	<h3>Your favorite photos</h3>
+
+	<photo-viewer data-ng-if="favoritesCtrl.photos.length > 0" photos="favoritesCtrl.photos" active-photo="favoritesCtrl.activePhoto">
+		<button class="btn btn-danger" ng-click="favoritesCtrl.removeFavorite()">Remove from favorites</button>
+	</photos>
+</div>

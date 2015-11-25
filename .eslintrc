@@ -1,6 +1,5 @@
 {
   "extends": "eslint:recommended",
-  "plugins": ["angular"],
   "env": {
     "es6": true,
     "browser": true,
@@ -12,6 +11,11 @@
   "globals": {
     "angular": true,
     "module": true,
-    "inject": true
+    "inject": true,
+    "moment": true,
+    "_": true
+  },
+  "rules": {
+    "no-mixed-spaces-and-tabs": 0
   }
 }

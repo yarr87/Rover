@@ -1,0 +1,31 @@
+<carousel>
+  <slide ng-repeat="photo in photoViewerCtrl.photos" active="photo.active">
+    <div class="row">
+      <div class="col-xs-3">
+        <button class="btn btn-primary btn-lg photos-prev" ng-click="photoViewerCtrl.prev()" ng-class="{ disabled: $index === 0 }">
+          <i class="glyphicon glyphicon-chevron-left"></i>
+        </button>
+      </div>
+      <div class="col-xs-6">
+        <div class="photo-header clearfix">
+          <h4>{{$index + 1}} of {{ photoViewerCtrl.photos.length }}</h4>
+          <i class="glyphicon glyphicon-camera"></i><span class="camera-name">{{photo.camera.full_name}}</span>
+          <div class="rover-details">
+            <h4>{{ photo.rover.name }}, {{ photo.earth_date }}</h4>
+          </div>
+          <div>
+            <ng-transclude></ng-transclude>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <button class="btn btn-primary btn-lg photos-next" ng-click="photoViewerCtrl.next()" ng-class="{ disabled: $last }">
+          <i class="glyphicon glyphicon-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="photo">
+      <img ng-src="{{ photo.img_src }}" align="center" />
+    </div>
+  </slide>
+</carousel>

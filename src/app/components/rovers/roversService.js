@@ -53,12 +53,14 @@ export class RoversService {
         ]
       }
     ];
-  };
+  }
 
+  // Return information about all rovers
   getRovers() {
     return this.rovers;
   }
 
+  // Return a single rover by name
   getRover(roverName) {
     return _.find(this.rovers, { name: roverName });
   }

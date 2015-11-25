@@ -6,10 +6,10 @@
     </div>
     <div class="col-xs-4 photo-date">
       <label>Photo date:</label>
-      <span class="text-danger" ng-show="roverPhotosCtrl.invalidDate">Invalid Date</span>
+      <span class="text-danger" ng-show="roverPhotosCtrl.date.isInvalid">Invalid Date</span>
       <p class="input-group">
-        <input type="text" class="form-control" datepicker-popup ng-model="roverPhotosCtrl.date" show-button-bar="false" show-weeks="false"
-               is-open="roverPhotosCtrl.datePopupOpen" min-date="roverPhotosCtrl.minDate" max-date="roverPhotosCtrl.maxDate" close-text="Close"
+        <input type="text" class="form-control" datepicker-popup ng-model="roverPhotosCtrl.date.value" show-button-bar="false" show-weeks="false"
+               is-open="roverPhotosCtrl.date.isPopupOpen" min-date="roverPhotosCtrl.date.min" max-date="roverPhotosCtrl.date.max" close-text="Close"
                ng-focus="roverPhotosCtrl.openDatePopup()" />
         <span class="input-group-btn">
           <button type="button" class="btn btn-default" ng-click="roverPhotosCtrl.openDatePopup($event)"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -21,31 +21,11 @@
 
   <hr />
 
-  <carousel ng-if="roverPhotosCtrl.hasPhotos">
-    <slide ng-repeat="photo in roverPhotosCtrl.photos" active="photo.active">
-      <div class="row">
-        <div class="col-xs-3">
-          <button class="btn btn-primary btn-lg photos-prev" ng-click="roverPhotosCtrl.prev()" ng-class="{ disabled: $index === 0 }">
-            <i class="glyphicon glyphicon-chevron-left"></i>
-          </button>
-        </div>
-        <div class="col-xs-6">
-          <div class="photo-header clearfix">
-            <h4>{{$index + 1}} of {{ roverPhotosCtrl.photos.length }}</h4>
-            <i class="glyphicon glyphicon-camera"></i><span class="camera-name">{{photo.camera.full_name}}</span>
-          </div>
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-primary btn-lg photos-next" ng-click="roverPhotosCtrl.next()" ng-class="{ disabled: $last }">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <div class="photo">
-        <img ng-src="{{ photo.img_src }}" align="center" />
-      </div>
-    </slide>
-  </carousel>
+  <photo-viewer ng-if="roverPhotosCtrl.photosLoaded" photos="roverPhotosCtrl.photos" active-photo="roverPhotosCtrl.activePhoto">
+    <button btn-checkbox ng-model="roverPhotosCtrl.activePhoto.isFavorite" class="btn btn-primary btn-favorite" ng-click="roverPhotosCtrl.addOrRemoveFavorite()">
+      <i class="glyphicon glyphicon-star"></i>Favorite
+    </button>
+  </photo-viewer>
 
   <div class="no-photos" ng-show="roverPhotosCtrl.noPhotosForDate">
     <h3>Sorry, no photos for this date :(</div>

@@ -1,0 +1,38 @@
+.carousel-indicators {
+	display: none;
+}
+
+.photo-header {
+	margin-bottom: 10px;
+
+	h4 {
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+
+.camera-name {
+	margin-left: 5px;
+}
+
+.carousel-control.left, .carousel-control.right {
+	display: none;
+}
+
+.photos-prev, .photos-next {
+	margin-top: 10px;
+	cursor: pointer;
+
+	i {
+		margin-top: 4px;
+	}
+
+	&.disabled {
+		display: none;
+	}
+}
+
+.photo {
+	text-align: center;
+	margin-top: 10px;
+}

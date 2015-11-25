@@ -1,48 +1,9 @@
-body.roverPhotos {
-	background-image: none;
-	color: $mars-dark;
-}
-
 .photo-date {
 	margin-top: 25px;
 }
 
-.carousel-indicators {
-	display: none;
-}
-
-.photo-header {
-	margin-bottom: 10px;
-}
-
-.camera-name {
-	margin-left: 5px;
-}
-
-.carousel-control.left, .carousel-control.right {
-	display: none;
-}
-
-.photos-prev, .photos-next {
-	margin-top: 10px;
-	cursor: pointer;
-
-	i {
-		margin-top: 4px;
-	}
-
-	&.disabled {
-		display: none;
-	}
-}
-
 .random-date {
 	margin-left: 15px;
-}
-
-.photo {
-	text-align: center;
-	margin-top: 10px;
 }
 
 .no-photos {
@@ -52,4 +13,20 @@ body.roverPhotos {
 hr {
 	border-color: $mars-dark;
 	margin-top: 5px;
+}
+
+.btn-favorite {
+	i {
+		margin-right: 4px;
+	}
+
+	&.active, &.active:focus, &.active:hover {
+		color: yellow;
+	}
+}
+
+.roverPhotos {
+	.rover-details {
+		display: none;
+	}
 }

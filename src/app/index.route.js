@@ -1,8 +1,9 @@
+// Set up routes
 export function routerConfig ($stateProvider, $urlRouterProvider) {
   'ngInject';
   $stateProvider
-  	.state('layout', {
-  		templateUrl: 'app/layout/layout.html'
+    .state('layout', {
+  	  templateUrl: 'app/layout/layout.html'
   	})
     .state('home', {
       url: '/',
@@ -33,6 +34,18 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
     			return rover;
     		}
     	}
+    })
+    .state('favorites', {
+      url: '/favorites',
+      parent: 'layout',
+      templateUrl: 'app/favorites/favorites.html',
+      controller: 'FavoritesController',
+      controllerAs: 'favoritesCtrl',
+      resolve: {
+        photos: function(FavoritePhotosService) {
+          return FavoritePhotosService.getFavorites();
+        }
+      }
     })
     .state('about', {
     	url: '/about',
