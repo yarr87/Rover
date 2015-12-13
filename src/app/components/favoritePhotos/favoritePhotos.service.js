@@ -7,7 +7,7 @@ export class FavoritePhotosService {
     this.localStorageKey = "rover.photos.favorites";
     this.localStorageService = localStorageService;
 
-    this.photos = localStorageService.get(this.localStorageKey);
+    this.photos = localStorageService.get(this.localStorageKey) || [];
   }
 
   // Return all favorited photos
